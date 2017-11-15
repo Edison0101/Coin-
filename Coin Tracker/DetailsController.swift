@@ -17,6 +17,7 @@ class DetailsController: UIViewController {
     //controlleri qe e thrret kete screen (Shiko ListaController.swift)
     var selectedCoin:CoinCellModel!
     
+    
     //IBOutlsets jane deklaruar me poshte
     @IBOutlet weak var imgFotoja: UIImageView!
     @IBOutlet weak var lblDitaOpen: UILabel!
@@ -37,7 +38,10 @@ class DetailsController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       
+        lblCoinName.text = selectedCoin.coinName
         
+         
         //brenda ketij funksioni, vendosja foton imgFotoja Outletit
         //duke perdorur AlamoFireImage dhe funksionin:
         //af_setImage(withURL:URL)
