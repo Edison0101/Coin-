@@ -10,7 +10,17 @@ import UIKit
 
 //Klasa permbane tabele kshtuqe duhet te kete
 //edhe protocolet per tabela
-class FavoritetController: UIViewController {
+class FavoritetController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+   
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        <#code#>
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()

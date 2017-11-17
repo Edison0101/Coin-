@@ -87,6 +87,9 @@
                                 <state key="normal" title="Te Gjitha " image="List">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="mbylle:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WT0-zV-iMB"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1y3-O8-hKa">
                                 <rect key="frame" x="22" y="287" width="160" height="160"/>
@@ -344,6 +347,9 @@
                                 <state key="normal" title="Ruaj te Favoritet " image="Favourites">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="ruaj:" destination="BYZ-38-t0r" eventType="touchDragInside" id="32O-VT-Kj3"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coin Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0A0-3o-Fjc">
                                 <rect key="frame" x="0.0" y="70" width="375" height="30"/>
@@ -383,6 +389,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="fTf-DI-qWJ"/>
                     <connections>
+                        <outlet property="Ruaj" destination="zJM-JG-yg0" id="DAb-zp-a9V"/>
                         <outlet property="imgFotoja" destination="3Q6-X2-rDz" id="tjs-rZ-CHI"/>
                         <outlet property="lbl24OreHigh" destination="Vj1-ZF-tcZ" id="gSD-QA-BYO"/>
                         <outlet property="lbl24OreLow" destination="XHl-ED-3pi" id="9Wx-wd-C69"/>
@@ -469,6 +476,6 @@
         <image name="OpenDay" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="h72-xT-V52"/>
+        <segue reference="Zec-Nu-CFv"/>
     </inferredMetricsTieBreakers>
 </document>
