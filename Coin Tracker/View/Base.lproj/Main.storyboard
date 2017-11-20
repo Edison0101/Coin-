@@ -26,6 +26,9 @@
                                 <state key="normal" title="Ktheu" image="Kthehu">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="mbyllu:" destination="stc-SG-OBg" eventType="touchUpInside" id="Ajl-iB-QmQ"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Parate favorite" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w7z-Mi-uVm">
                                 <rect key="frame" x="132" y="60" width="111" height="21"/>
@@ -56,6 +59,7 @@
                         <viewLayoutGuide key="safeArea" id="rcr-53-jqy"/>
                     </view>
                     <connections>
+                        <outlet property="tableView" destination="qc3-Wk-g5r" id="1YH-aO-e6T"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="shfaqDetajet" id="Zec-Nu-CFv"/>
                     </connections>
                 </viewController>
@@ -348,6 +352,7 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="Ruaj:" destination="BYZ-38-t0r" eventType="touchUpInside" id="i6t-sm-1iy"/>
                                     <action selector="ruaj:" destination="BYZ-38-t0r" eventType="touchDragInside" id="32O-VT-Kj3"/>
                                 </connections>
                             </button>
@@ -389,7 +394,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="fTf-DI-qWJ"/>
                     <connections>
-                        <outlet property="Ruaj" destination="zJM-JG-yg0" id="DAb-zp-a9V"/>
                         <outlet property="imgFotoja" destination="3Q6-X2-rDz" id="tjs-rZ-CHI"/>
                         <outlet property="lbl24OreHigh" destination="Vj1-ZF-tcZ" id="gSD-QA-BYO"/>
                         <outlet property="lbl24OreLow" destination="XHl-ED-3pi" id="9Wx-wd-C69"/>

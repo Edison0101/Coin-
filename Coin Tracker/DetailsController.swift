@@ -33,6 +33,9 @@ class DetailsController: UIViewController {
     @IBOutlet weak var lblCmimiUSD: UILabel!
     @IBOutlet weak var lblCoinName: UILabel!
     
+    var appdelegate:AppDelegate!
+    var context:NSManagedObjectContext!
+    
     //APIURL per te marre te dhenat te detajume per coin
     //shiko: https://www.cryptocompare.com/api/ per detaje
     let APIURL = "https://min-api.cryptocompare.com/data/pricemultifull"
@@ -42,10 +45,14 @@ class DetailsController: UIViewController {
        
         
         
-        imgFotoja.af_setImage(withURL: URL(string: selectedCoin.imagePath)!)
+        imgFotoja.af_setImage(withURL: URL(string: selectedCoin.coinImage())!)
         lblCoinName.text = selectedCoin.coinName
        
-         
+        appdelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        context = appdelegate.persistentContainer.viewContext
+        
+        
         //brenda ketij funksioni, vendosja foton imgFotoja Outletit
         //duke perdorur AlamoFireImage dhe funksionin:
         //af_setImage(withURL:URL)
@@ -115,30 +122,26 @@ class DetailsController: UIViewController {
     
   
     
-    @IBOutlet weak var Ruaj: UIButton!
-    //IBAction mbylle - per butonin te gjitha qe mbyll ekranin
-   
     
-    let appdelegate = UIApplication.shared.delegate as! AppDelegate
+    @IBAction func Ruaj(_ sender: Any) {
     
-    let context = appdelegate.persistentContainer.viewContext
+    let teDhenat = NSEntityDescription.insertNewObject(forEntityName: "Users", into: self.context)
     
-    let teDhenat = NSEntityDescription.insertNewObject(forEntityName: "Users", into: context)
+        teDhenat.setValue(String(selectedCoin.imagePath), forKey: "imagePath")
+        teDhenat.setValue(String(selectedCoin.coinSymbol), forKey: "coinSymbol")
+        teDhenat.setValue(String(selectedCoin.coinAlgo), forKey: "coinAlgo")
+        teDhenat.setValue(String(selectedCoin.coinName), forKey: "coinName")
+        teDhenat.setValue(String(selectedCoin.totalSuppy), forKey: "totalSupply")
+        
+        print(teDhenat)
     
-    teDhenat.setValue("imagePath", forKey: "imagePath")
-    teDhenat.setValue("coinSymbol", forKey: "coinSymbol")
-    teDhenat.setValue("coinAlgo", forKey: "coinAlgo")
-    teDhenat.setValue("coinName", forKey: "coinName")
-    teDhenat.setValue("totalSupply", forKey: "totalSupply")
-    
-    do {
-    try context.save()
-    } catch {
-    print("Gabim gjate ruajtjes")
-    }
-    
-    let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Users")
-    
-    request.returnsObjectsAsFaults = false
-}
+        do {
+            try self.context.save()
+            print("OK")
+        } catch {
+            print("Gabim gjate ruajtjes")
+        }
 
+    
+    }
+}

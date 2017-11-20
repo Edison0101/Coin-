@@ -23,8 +23,13 @@ class CoinCellModel{
         self.coinSymbol = coinSymbol
         self.coinAlgo = coinAlgo
         self.totalSuppy = totalSuppy
-        self.imagePath = "\(self.imageBase)\(imagePath)"
+        self.imagePath = imagePath
         
     }
-    
+    func coinImage()->String{
+return "\(self.imageBase)\(imagePath)"
+   }
+
+
+
 }
